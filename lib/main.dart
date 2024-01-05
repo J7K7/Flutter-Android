@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart'  ;
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ums_demo/Themes/AppTheme.dart';
 import 'package:ums_demo/pages/WelcomeScreen/Screen.dart';
 
 void main() {
@@ -11,14 +13,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'UMS Master',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.black,
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: WelcomeScreen(),
+    return SimpleBuilder(
+      builder: (_) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.light,
+          themeMode: ThemeMode.dark,
+          home: WelcomeScreen(),
+        );
+      },
     );
   }
 }

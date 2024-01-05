@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 
 const kPrimaryColor = Color(0xFF6F35A5);
+const kPrimaryLightColor = Color(0xFFF1E6FF);
 const kAccentColor = Color(0xFF41A397);
 
 const kBodyColor = Color(0xFF2B3953);

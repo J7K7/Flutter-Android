@@ -11,8 +11,8 @@ class AppTheme {
 
 ThemeData _lightTheme = ThemeData(
   brightness: Brightness.light,
-  backgroundColor: kBgColor,
-  scaffoldBackgroundColor: kBgColor,
+  backgroundColor: kBlack,
+  scaffoldBackgroundColor: kSkyLight,
   primarySwatch: Colors.teal,
   primaryColor: kPrimaryColor,
   // kPrimaryColorLight: kPrimaryColor1Light,
