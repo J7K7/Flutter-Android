@@ -16,7 +16,7 @@ const kBgColor = Color(0xFFE7ECF2);
 //Text
 const kTextColor = Color(0xFFFFFFFF);
 const kTextColorLight = Color(0xFF1E1E1E);
-const kHeadingTextColor = Color(0xFF106FB0);
+const kHeadingTextColor = Color(0xFF6F35A5);
 
 const kHintTextColor = Color(0xFF9C9C9D);
 

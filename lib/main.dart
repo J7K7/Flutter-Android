@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ums_demo/Pages/LoginPage/Screen.dart';
 import 'package:ums_demo/Themes/AppTheme.dart';
 import 'package:ums_demo/pages/WelcomeScreen/Screen.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: AppTheme.light,
           themeMode: ThemeMode.dark,
-          home: WelcomeScreen(),
+          // home: WelcomeScreen(),
+          home: LoginScreen(),
         );
       },
     );
