@@ -14,27 +14,29 @@ class LoginScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () => hideKeyboard(context),
       child: Scaffold(
-        body: Column(
-          children: [
-            vSpace(60),
-            Container(
-              alignment: Alignment.center,
-              child: const Text('Login', style: headingTextStyle1, textAlign: TextAlign.center),
-            ),
-            vSpace(22),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: SvgPicture.asset('assets/icons/login.svg', height: Get.height * 0.45, fit: BoxFit.contain),
-            ),
-            vSpace(12),
-            LoginCardWidget(),
-            vSpace(13),
-            Container(
-              alignment: Alignment.bottomRight,
-              height: Get.height * 0.16,
-              child: Image.asset('assets/images/login_bottom.png', fit: BoxFit.scaleDown),
-            ),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              vSpace(60),
+              Container(
+                alignment: Alignment.center,
+                child: const Text('Login', style: headingTextStyle1, textAlign: TextAlign.center),
+              ),
+              vSpace(22),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SvgPicture.asset('assets/icons/login.svg', height: Get.height * 0.45, fit: BoxFit.contain),
+              ),
+              vSpace(12),
+              LoginCardWidget(),
+              vSpace(13),
+              Container(
+                alignment: Alignment.bottomRight,
+                height: Get.height * 0.16,
+                child: Image.asset('assets/images/login_bottom.png', fit: BoxFit.cover),
+              ),
+            ],
+          ),
         ),
       ),
     );
