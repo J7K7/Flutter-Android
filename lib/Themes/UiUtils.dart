@@ -53,7 +53,9 @@ BoxDecoration solidRoundedBox(double radius, {Color color = Colors.transparent})
 BoxDecoration inputRoundedBox() => BoxDecoration(color: getOffColorR(), borderRadius: BorderRadius.circular(20));
 
 
-Widget spinKitWidget({double size = 40}) => Center(child: SpinKitWave(color: kAccentColor, size: size,));
+Widget spinKitWidgetWave({double size = 40}) => Center(child: SpinKitWave(color: kPrimaryColor, size: size,));
+Widget spinKitWidgetWaveSpinner({double size = 100}) => Center(child: SpinKitWaveSpinner(color: kPrimaryColor, trackColor: kPrimaryColor, waveColor: kPurple, size: size,));
+
 Image errorImageWidget({String image = 'error_img', double height = 32, double width = 32, Color color = kGrey}) => Image.asset(
   assetsImgPng(image),
   height: height,

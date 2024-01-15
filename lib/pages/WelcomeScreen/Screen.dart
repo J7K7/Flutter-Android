@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:ums_demo/AppCommon/CommonFunctions.dart';
-import 'package:ums_demo/Pages/LoginPage/Screen.dart';
+import 'package:ums_demo/Pages/LoginScreen/Screen.dart';
 import 'package:ums_demo/Themes/AppColors.dart';
 import 'package:ums_demo/Themes/Buttons.dart';
-import 'package:ums_demo/Themes/UiUtils.dart';
+import 'package:ums_demo/pages/SignInScreen/Screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +34,17 @@ class WelcomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  SvgPicture.asset('assets/icons/chat.svg', height: Get.height * 0.45, fit: BoxFit.fill),
+                  SvgPicture.asset('assets/icons/chat.svg', height: Get.height * 0.40, fit: BoxFit.fill),
                   vSpace(10),
-                    mainButton('LOGIN', onPress: () {
-                      Get.offAll(() => LoginScreen());
-                    }, color: kPrimaryColor, minSize: Size(Get.width - 20, 40)),
+                  mainButton('LOGIN', onPress: () {
+                      Get.to(() => const LoginScreen());
+                    }, color: kPrimaryColor,
+                  ),
+                  vSpace(10),
+                  mainButton('SIGN UP', onPress: () {
+                    Get.to(() => SignInScreen());
+                  }, color: kPrimaryColor,
+                  ),
                 ],
               ),
             ),

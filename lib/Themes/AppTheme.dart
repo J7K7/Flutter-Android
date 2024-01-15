@@ -22,10 +22,10 @@ ThemeData _lightTheme = ThemeData(
   appBarTheme: const AppBarTheme(
     elevation: 3,
     centerTitle: true,
-    color: kWhite,
-    titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: kTextColorLight,),
-    iconTheme: IconThemeData(color: kAccentColor,),
-    actionsIconTheme: IconThemeData(color: kAccentColor,),
+    color: kSkyLight,
+    titleTextStyle: TextStyle(fontSize: 22, color: kHeadingTextColor, fontWeight: FontWeight.bold,),
+    iconTheme: IconThemeData(color: kPrimaryColor,),
+    actionsIconTheme: IconThemeData(color: kPrimaryColor,),
   ),
   textTheme: const TextTheme(
     headline1: TextStyle(color: kBlack, fontSize: fsXXXLarge, fontWeight: FontWeight.bold, letterSpacing: .6,),

@@ -40,16 +40,18 @@ const ISAUTOLOGIN                     = "ISAUTOLOGIN";
 const LOGINDATA                       = "LOGINDATA";
 
 /*API Related Constant */
-const BASEURL                         = "https://api.theedunetwork.com/api/";
+const BASEURL                         = "http://192.168.75.70:3000/";
 const LIVEURL                         = "";
-const IMAGE_PATH                      = "https://portal.theedunetwork.com/";
+const IMAGE_PATH                      = "http://192.168.75.70:3000/images/";
 
 const RECORDPERPAGE                   = 50;
 const SAVEDSEARCHRECORD               = 500;
 
 //User Related API
-const API_USER                        = "User/";
-const API_LOGIN                       = API_USER + "Login";
+const API_USER                        = "Users/";
+const API_LOGIN                       = "login";
+const API_SIGNIN                      = API_USER + "signIn";
+const API_UserList                    = API_USER + "getAll";
 const API_FORGOTPASSWORD              = API_USER + "ForgotPassword";
 const API_CHANGEPASSWORD              = API_USER + "ChangePassword";
 const API_RESETPASSWORD               = API_USER + "ResetPassword";

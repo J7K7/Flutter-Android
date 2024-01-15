@@ -3,25 +3,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ums_demo/AppCommon/CommonFunctions.dart';
 import 'package:ums_demo/Themes/UiUtils.dart';
 import 'package:get/get.dart';
-import 'package:ums_demo/pages/LoginPage/CardWidget.dart';
-import 'Controller.dart';
+import 'package:ums_demo/pages/LoginScreen/CardWidget.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => hideKeyboard(context),
       child: Scaffold(
+        appBar: AppBar(title: const Text("Login"),elevation: 0.0,titleTextStyle: headingTextStyle1),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              vSpace(60),
-              Container(
-                alignment: Alignment.center,
-                child: const Text('Login', style: headingTextStyle1, textAlign: TextAlign.center),
-              ),
               vSpace(22),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),

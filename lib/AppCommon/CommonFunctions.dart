@@ -49,7 +49,7 @@ String getFormattedDate(DateTime dateTime) {
 }
 
 String convertDate(String text) {
-  return DateFormat("dd-MM-yyyy").format(DateTime.parse(text));
+  return DateFormat("yyyy-MM-dd").format(DateTime.parse(text));
 }
 
 String formatDateTime(String format, DateTime dateTime) {

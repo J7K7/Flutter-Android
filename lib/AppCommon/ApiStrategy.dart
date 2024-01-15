@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as getClass;
 import 'package:ums_demo/Models/LoginModel.dart';
-import 'package:ums_demo/Pages/LoginPage/Screen.dart';
+import 'package:ums_demo/Pages/LoginScreen/Screen.dart';
 import 'package:ums_demo/Utilities/SharedPreferences.dart';
 import 'package:ums_demo/Themes/AppStrings.dart';
 import 'package:ums_demo/Widgets/Dialogs/CustomDialog.dart';
@@ -30,8 +30,8 @@ class ApiStrategy {
   ApiStrategy._internal() {
     if (_client == null) {
       BaseOptions options = BaseOptions();
-      options.connectTimeout = connectTimeOut as Duration?;
-      options.receiveTimeout = receiveTimeOut as Duration?;
+      options.connectTimeout = const Duration(milliseconds: connectTimeOut);
+      options.receiveTimeout = const Duration(milliseconds: receiveTimeOut);
       options.baseUrl = getBaseUrl();
       _client = Dio(options);
 
@@ -189,6 +189,7 @@ class ApiStrategy {
         LoginModel loginModel = LoginModel.fromJson(SharedPrefs.getCustomObject(LOGINDATA));
         _client!.options.headers = {"Authorization" : "bearer ${loginModel.accessToken}"};
       }
+
       if (addHeader) {
         _client!.options.headers = {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -285,6 +286,8 @@ class ApiStrategy {
         }
       }
 
+      debugPrint('Status Code --> ${response.statusCode}');
+
       switch (response.statusCode) {
         case 200:
         case 201:
@@ -292,7 +295,7 @@ class ApiStrategy {
           break;
         case 401:
           SharedPrefs.clearLoginData();
-          getClass.Get.offAll(() => LoginScreen());
+          getClass.Get.offAll(() => const LoginScreen());
           _handError(errorCallBack, apiUnAuthorizeAccessMsg);
           break;
         case 400:
@@ -311,13 +314,13 @@ class ApiStrategy {
 
         debugPrint('data e ${error.response}');
 
-        if(e.type != DioExceptionType) {
+        if(e.type != DioExceptionType.badResponse) {
           _handError(errorCallBack, apiServerErrorMsg);
         } else {
           switch (error.response!.statusCode) {
             case 401:
               SharedPrefs.clearLoginData();
-              getClass.Get.offAll(() => LoginScreen());
+              getClass.Get.offAll(() => const LoginScreen());
               _handError(errorCallBack, apiUnAuthorizeAccessMsg);
               break;
             case 400:

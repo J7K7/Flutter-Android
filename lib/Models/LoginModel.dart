@@ -6,38 +6,21 @@ import 'package:ums_demo/Themes/UiUtils.dart';
 
 class LoginModel{
   String? accessToken;
-  int? userId;
-  String? userName;
+  String? userType;
   String? name;
-  String? email;
-  String? mobileNo;
-  String? password;
-  String? dob;
   String? isActive;
   String? image;
 
   LoginModel({
     this.accessToken,
-    this.userId,
-    this.userName,
     this.name,
-    this.email,
-    this.mobileNo,
-    this.password,
-    this.dob,
     this.isActive,
     this.image
   });
 
   LoginModel.fromJson(Map<String, dynamic> data){
-    accessToken = data['access_token'];
-    userId = data['userId'];
-    userName = data['userName'];
+    accessToken = data['token'];
     name = data['name'];
-    email = data['email'];
-    mobileNo = data['mobileNo'];
-    password = data['password'];
-    dob = data['dob'];
     isActive = data['isActive'];
     image = data['image'];
   }
@@ -53,21 +36,12 @@ class LoginModel{
   Map<String, dynamic> toJson(){
     final data = <String, dynamic>{};
 
-    data['access_token'] = accessToken;
-    data['userId'] = userId;
-    data['userName'] = userName;
+    data['token'] = accessToken;
     data['name'] = name;
-    data['email'] = email;
-    data['mobileNo'] = mobileNo;
-    data['password'] = password;
-    data['dob'] = dob;
     data['isActive'] = isActive;
     data['image'] = image;
 
     return data;
 
   }
-
-
-
 }
